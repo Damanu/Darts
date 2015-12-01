@@ -28,11 +28,13 @@ def main(argv):
 		while i<=playnum:
 			print "Player: ",i
 			score=float(raw_input("score: "))
-			if score<=points[i-1]:
+			if score<points[i-1]:
 				points[i-1]=points[i-1]-score
-			elif score == points[i-1]:
-				print "Winner: Player", i
-				sys.exit()
+			elif int(score) == int(points[i-1]):
+				print "------------------"
+				print "Winner: Player",i
+				print "------------------"
+				sys.exit()				
 			hpoints[i-1]+=score
 			average[i-1]=float((hpoints[i-1]))/float(playround)
 			print "Round: ", playround
